@@ -14,10 +14,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Blog',
             fields=[
+                # ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                # ('title', models.CharField(max_length=200)),
+                # ('content', models.TextField()),
+                # ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='생성날짜')),
+                # ('modified_at', models.DateTimeField(auto_now=True, verbose_name='수정날짜')),
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-                ('content', models.TextField()),
-                ('pub_date', models.DateTimeField(verbose_name='date published')),
+                ('title', models.CharField(max_length=200, verbose_name='제목')),
+                ('desc', models.TextField(blank=True, verbose_name='본문')),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='생성날짜')),
+                ('modified_at', models.DateTimeField(auto_now=True, verbose_name='수정날짜')),
+  
             ],
         ),
     ]
